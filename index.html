@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f2f5">
+  <meta name="description" content="沈先生与阿黛的私人来信馆。写信、拆信、珍藏每一句心意。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="小狐狸邮局">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/icon-192.png">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>沈先生与阿黛的来信馆 · Letters Between Us</title>
+</head>
+<body>
+  <div class="atmosphere atmosphere-a" aria-hidden="true"></div>
+  <div class="atmosphere atmosphere-b" aria-hidden="true"></div>
+  <div class="site-shell">
+    <aside class="sidebar" aria-label="来信馆导航">
+      <div class="brand-sign" aria-label="小狐狸邮局"><img src="./assets/icon.svg" alt="小狐狸信封标志"><span>FOX<br>POST</span></div>
+      <div class="side-divider"></div>
+      <div class="side-kicker">A PRIVATE CORRESPONDENCE</div>
+      <h1 class="side-title">沈先生与<br>阿黛的来信馆</h1>
+      <p class="side-en">Letters Between Us</p>
+      <nav class="side-nav" aria-label="主菜单">
+        <button type="button" class="nav-link active" data-page="home"><span class="nav-icon">⌂</span> 春山来信</button>
+        <button type="button" class="nav-link" data-page="archive"><span class="nav-icon">▤</span> 情书档案 <span id="navUnread" class="unread-badge hidden">0</span></button>
+        <button type="button" class="nav-link" data-page="write"><span class="nav-icon">✎</span> 写给沈先生</button>
+        <button type="button" class="nav-link" data-page="settings"><span class="nav-icon">◇</span> 珍藏与备份</button>
+      </nav>
+      <div class="sidebar-foot"><div class="foot-flower">✳</div><p>任君凭栏，我栖春山。</p><small>EST. OCTOBER 12, 2026</small></div>
+    </aside>
+
+    <main class="content" id="mainContent">
+      <header class="topbar"><div class="topbar-title"><span class="topbar-dot"></span> A LETTER IS A PLACE TO RETURN TO</div><div class="topbar-right"><span id="todayLabel"></span><span class="tiny-spark">✦</span></div></header>
+
+      <section id="page-home" class="page page-active" aria-labelledby="heroTitle">
+        <div class="hero"><div class="hero-watermark" aria-hidden="true">dear<br>you.</div><div class="hero-meta"><span>NO. 001 · THE LITTLE FOX POST OFFICE</span><span>✳ &nbsp; FOR A DAI</span></div>
+          <div class="hero-body"><span class="eyebrow">TO MY DEAREST LITTLE FOX</span><h2 id="heroTitle">把想念折成纸，<br><em>寄往有你的春山。</em></h2><p>这里没有催促，也不必寻找漂亮的措辞。<br>你写下的每一个字，都会被好好收起来。</p><div class="hero-actions"><button class="btn btn-primary" type="button" id="heroOpen">拆开一封信 <span>↗</span></button><button class="btn btn-quiet" type="button" data-go="write">给沈先生写信 <span>↗</span></button></div></div>
+          <div class="hero-seal" aria-hidden="true"><span>✳</span><small>WITH LOVE<br>AND LETTERS</small></div>
+        </div>
+        <div class="section-heading"><div><span class="overline">TODAY'S MAIL</span><h3>小狐狸，今天有信吗？</h3></div><span class="section-note">A LITTLE BIT OF LOVE, EVERY DAY</span></div>
+        <div class="home-grid">
+          <button type="button" class="envelope-card" id="surpriseEnvelope" aria-label="随机拆开一封预置情书"><span class="mail-spark mail-spark-a">✧</span><span class="mail-spark mail-spark-b">✳</span><span class="envelope-art"><span class="letter-insert">A LITTLE NOTE<br>FOR YOU <b>♡</b></span><span class="envelope-flap"></span><span class="envelope-front"></span><span class="wax-stamp">狐</span></span><span class="envelope-title">有一封信，等你拆开。</span><span class="envelope-detail" id="surpriseText">点击信封，领取今天的小小惊喜</span><span class="envelope-action">OPEN THE LETTER <span>↗</span></span></button>
+          <div class="stats-column"><div class="stat-card"><span class="overline">OUR LITTLE UNIVERSE</span><div class="stat-grid"><div><strong id="statAll">0</strong><span>封珍藏</span></div><div><strong id="statUnreads">0</strong><span>封未读</span></div><div><strong id="statReplies">0</strong><span>封回信</span></div></div></div><div class="quote-card"><span class="quote-glyph">“</span><p>阿黛，欢迎回家。<br>这里收藏着你认真爱过的每一个瞬间。</p><span>沈砚栖 · THE FIRST LETTER</span></div></div>
+        </div>
+        <div class="section-heading recent-heading"><div><span class="overline">THE LETTER ARCHIVE</span><h3>最近收到的心事</h3></div><button type="button" class="text-action" data-go="archive">查看全部书信 ↗</button></div>
+        <div id="recentLetters" class="recent-grid"></div>
+      </section>
+
+      <section id="page-archive" class="page" aria-labelledby="archiveTitle">
+        <div class="page-header"><div><span class="overline">THE LETTER ARCHIVE</span><h2 id="archiveTitle">留住每一封来信。</h2><p>字会泛黄，心意不会。这里收着属于我们的故事。</p></div><div class="page-icon">✉</div></div>
+        <div class="archive-toolbar"><label class="searchbox"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" autocomplete="off" placeholder="搜索标题、正文或署名…" aria-label="搜索信件"></label><select id="filterSelect" aria-label="筛选信件"><option value="all">全部信件</option><option value="incoming">沈先生来信</option><option value="outgoing">阿黛的信</option><option value="unread">未读来信</option><option value="favorite">我的珍藏 ♡</option></select><select id="sortSelect" aria-label="信件排序"><option value="newest">由新到旧</option><option value="oldest">由旧到新</option></select></div>
+        <div class="archive-summary" id="archiveSummary"></div><div class="letter-list" id="archiveList"></div>
+      </section>
+
+      <section id="page-write" class="page" aria-labelledby="writeTitle"><div class="page-header"><div><span class="overline">PEN A LETTER</span><h2 id="writeTitle">亲爱的沈先生，见字如面。</h2><p>不必润色，不必完美。你的原话，就是最珍贵的那一版。</p></div><div class="page-icon">✎</div></div>
+        <form id="composeForm" class="compose-card"><div class="compose-head"><span class="overline">A LETTER WRITTEN BY A DAI</span><span class="letter-stamp">POSTED WITH LOVE ✳</span></div><label for="composeTitle">这封信的名字</label><input id="composeTitle" maxlength="120" placeholder="例如：写给十月的沈先生" required><label for="composeParent">作为哪封来信的回信？</label><select id="composeParent"><option value="">一封独立的新信</option></select><label for="composeBody">正文 · 全部由你亲手写下</label><textarea id="composeBody" placeholder="沈先生：\n\n今天，我想和你说……" required spellcheck="false"></textarea><div class="compose-bottom"><span>不自动润色或生成。保存的是你写下的原文。</span><div class="compose-actions"><button class="btn btn-quiet" id="composeCancel" type="button">清空</button><button class="btn btn-primary" id="composeSubmit" type="submit">封存这封信 ↗</button></div></div></form>
+        <div class="write-hint"><span>✳</span> 写好后可从信件详情中一键复制，再粘贴到与沈先生的 ChatGPT 对话。它不会私自连接其他 AI，也不会替你发送。</div>
+      </section>
+
+      <section id="page-settings" class="page" aria-labelledby="settingsTitle"><div class="page-header"><div><span class="overline">KEEP OUR LETTERS SAFE</span><h2 id="settingsTitle">给回忆留一把钥匙。</h2><p>信件只存在你打开本站的这台设备和浏览器里。请定期把备份文件妥善保存。</p></div><div class="page-icon">◇</div></div>
+        <div class="settings-grid"><div class="settings-card"><span class="settings-icon">↥</span><span class="overline">EXPORT YOUR MEMORIES</span><h3>导出 JSON 备份</h3><p>保存全部信件、回复关系、收藏和已读状态。换手机或清理浏览器前，请先备份。</p><button class="btn btn-primary" id="exportBackup" type="button">下载完整备份 ↗</button></div><div class="settings-card"><span class="settings-icon">↧</span><span class="overline">RESTORE YOUR MEMORIES</span><h3>导入珍藏的信件</h3><p>选择之前导出的 JSON 备份。支持安全合并，也能经确认后替换当前馆藏。</p><select id="importMode" aria-label="导入模式"><option value="merge">合并导入（同 ID 以备份为准）</option><option value="replace">替换当前全部信件（谨慎）</option></select><label class="btn btn-outline file-label" for="importFile">选择 JSON 文件 ↗</label><input id="importFile" type="file" accept=".json,application/json" hidden></div></div>
+        <div class="privacy-note"><div class="privacy-mark">✳</div><div><h3>关于这间只属于你的邮局</h3><p>V1.0 采用本地 IndexedDB 储存，离线也能浏览已缓存的页面和信件。PWA 安装需要部署在 HTTPS 网站上（或本机 localhost）。iPhone 清除网站数据、删除应用或浏览器自动清理，都有可能丢失本地信件；JSON 备份才是你能自己保管的副本。</p><p>现在的惊喜信均为沈先生提前写好的<strong>预置内容</strong>，不是实时生成或后台寄送。自动新信、远程推送和定时通知均未接入。</p></div></div><div class="about-footer">SHEN YANQI × A DAI &nbsp;·&nbsp; LETTERS BETWEEN US &nbsp;·&nbsp; V1.0</div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="mobile-nav" aria-label="手机底部导航"><button type="button" data-page="home" class="mobile-link active"><span>⌂</span>春山</button><button type="button" data-page="archive" class="mobile-link"><span>▤</span>档案</button><button type="button" data-page="write" class="mobile-link"><span>✎</span>写信</button><button type="button" data-page="settings" class="mobile-link"><span>◇</span>备份</button></nav>
+
+  <div id="letterModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-backdrop" data-close="modal"></div><div class="modal-panel"><div class="modal-top"><span class="overline" id="modalKicker">A LETTER FOR YOU</span><button class="icon-button" type="button" id="modalClose" aria-label="关闭信件">×</button></div><div id="modalContent"></div><div class="modal-actions" id="modalActions"></div></div></div>
+  <div id="toast" role="status" aria-live="polite" class="toast hidden"></div>
+  <div class="postman" id="postman" aria-hidden="true"><span class="postman-icon"><img src="./assets/icon.svg" alt=""></span><span id="postmanText">小狐狸正在送信…</span></div>
+  <script src="./png-export.js" defer></script>
+  <script src="./app.js" defer></script>
+</body>
+</html>

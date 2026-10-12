@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "沈先生与阿黛的来信馆",
+  "short_name": "小狐狸邮局",
+  "description": "Letters Between Us · 小狐狸的私人来信馆",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f2f5",
+  "theme_color": "#f7f2f5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {"src":"./assets/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"./assets/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}
